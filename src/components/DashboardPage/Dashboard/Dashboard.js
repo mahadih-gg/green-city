@@ -7,9 +7,13 @@ import {
     useRouteMatch,
 } from "react-router-dom";
 import Sidebar from '../Sidebar/Sidebar';
+import AddService from '../AddService/AddService';
 
 
 const Dashboard = () => {
+
+    let { path } = useRouteMatch();
+
     return (
         <main>
 
@@ -19,7 +23,9 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-9">
                     <Switch>
-
+                        <Route path={`${path}/addService`}>
+                            <AddService></AddService>
+                        </Route>
                     </Switch>
                 </div>
             </div>

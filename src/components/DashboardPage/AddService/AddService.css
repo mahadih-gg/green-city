@@ -1,0 +1,10 @@
+.add-service-box{
+    
+}
+.add-service-form textarea {
+    resize: none;
+}
+.add-service-form{
+    box-shadow: 5px 5px 10px #ccc;
+    border-radius: 20px;
+}

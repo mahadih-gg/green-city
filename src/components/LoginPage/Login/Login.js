@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import './Login.css';
-import loginBg from '../../../images/loginBg.png';
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
@@ -53,29 +52,35 @@ const Login = () => {
 
 
     return (
-        <section className="">
+        <section className="login-section">
             <div className="row align-items-center">
-                <div className="col-md-6 p-5 login">
-                    <div className="form-group">
-                        <label htmlFor="">User Name</label>
-                        <input type="text" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="">Password</label>
-                        <input type="password" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="" className="text-danger">Forgot your password?</label>
-                    </div>
-                    <div className="from-group mt-5">
-                        <button className="btn btn-custom" onClick={handleGoogleSignIn}>Google Sign in</button>
+
+                <div className="col-md-4 d-none d-md-block">
+
+                </div>
+
+                <div className="col-md-8 d-flex justify-content-center align-items-center login">
+                    <div className="login-form w-75 p-5">
+                        <div className="form-group">
+                            <label htmlFor="">User Name</label>
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="">Password</label>
+                            <input type="password" className="form-control" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="" className="text-danger">Forgot your password?</label>
+                        </div>
+                        <div className="from-group mt-5">
+                            <button className="btn btn-custom" onClick={handleGoogleSignIn}>Google Sign in</button>
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-6 d-none d-md-block">
-                    <img className="loginBgImg" src={loginBg} alt="" />
-                </div>
+
             </div>
-        </section>);
+        </section>
+    );
 };
 
 export default Login;

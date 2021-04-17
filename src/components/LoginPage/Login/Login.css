@@ -1,9 +1,14 @@
+.login-section{
+    background: url(../../../images/loginBg.jpg) no-repeat center / cover;
+    height: 80vh;
+}
 .login{
+    background: url(../../../images/loginBg2.png) no-repeat center / cover;
+    
+    height: 80vh;
+}
+
+.login-form{
     border-radius: 15px;
     box-shadow: 5px 5px 10px #aaaaaa;
-}
-.loginBgImg{
-    width: auto;
-    height: 500px
-
 }
