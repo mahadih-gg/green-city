@@ -8,11 +8,21 @@ import {
 } from "react-router-dom";
 import Header from './components/HomePage/Header/Header';
 import Home from './components/HomePage/Home/Home';
+import Login from './components/LoginPage/Login/Login';
+import { createContext, useState } from 'react';
+import Dashboard from './components/DashboardPage/Dashboard/Dashboard';
+
+
+export const UserContext = createContext()
 
 
 function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState({})
+
+
   return (
-    <div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Header></Header>
 
@@ -22,17 +32,17 @@ function App() {
             <Home></Home>
           </Route>
 
-          <Route path=''>
-
+          <Route path='/login'>
+            <Login></Login>
           </Route>
 
-          <Route path=''>
-
+          <Route path='/dashboard'>
+            <Dashboard></Dashboard>
           </Route>
 
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 

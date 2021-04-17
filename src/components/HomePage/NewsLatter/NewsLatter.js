@@ -13,7 +13,7 @@ const NewsLatter = () => {
             <form action="" className="w-100 subscribe-form">
                 <input type="email" className="form-control text-center w-50 py-3 m-auto" placeholder="Enter your E-mail" />
                 <div className="d-flex justify-content-center mt-4">
-                    <button type="submit" className="btn btn-primary px-5 py-3">SUBSCRIBE</button>
+                    <button type="submit" className="btn btn-custom px-5 py-3">SUBSCRIBE</button>
                 </div>
             </form>
         </section>

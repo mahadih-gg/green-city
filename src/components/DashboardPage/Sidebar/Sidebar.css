@@ -1,0 +1,24 @@
+.sidebar{
+    background: linear-gradient(to right top, #1EAF67, #23e875);
+    width: 100%;
+    height: 81.5vh;
+    border-radius: 0px 20px 20px 0px;
+    
+}
+.sidebarLink h5, h4{
+    margin-top: 30px;
+    font-size: 18px;
+    transition: all ease .3s;
+}
+.sidebarLink h5 a,
+.sidebarLink h4 a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.sidebarLink h5:hover{
+    transform: scale(1.07);
+    text-shadow: 0px 0px 10px #fff;
+    transition: all ease .3s;
+}

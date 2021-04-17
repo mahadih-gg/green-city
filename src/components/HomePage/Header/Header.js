@@ -29,7 +29,7 @@ const Header = () => {
                                 <Link className="nav-link me-5" to="/">Orders</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link me-5" to="/">Dashboard</Link>
+                                <Link className="nav-link me-5" to="/dashboard">Dashboard</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link me-5" to="/">Admin</Link>
@@ -40,7 +40,7 @@ const Header = () => {
                                 setSearchBox(!searchBox)
                                 setProfileBox(false)
                             }} className="btn-search"><span><FontAwesomeIcon icon={faSearch} /></span></button>
-                            <Link to="/logIn"><button className="btn btn-link ps-3">Log In</button></Link>
+                            <Link to="/login"><button className="btn btn-link ps-3">Log In</button></Link>
                         </div>
                         <div className="btn-profile px-4">
                             <button onClick={() => {
