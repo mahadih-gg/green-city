@@ -1,0 +1,17 @@
+.manage-services-table{
+    box-shadow: 5px 5px 10px #ddd;
+    border-radius: 10px;
+    width: 90%;
+}
+.btn-delete{
+    border: none;
+    background: none;
+    color: #f50000;
+    font-size: 25px;
+}
+.btn-delete:active{
+    transform: scale(.80)
+}
+.delete-row{
+    text-align: right;
+}

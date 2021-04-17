@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Sidebar from '../Sidebar/Sidebar';
 import AddService from '../AddService/AddService';
+import ManageServices from '../ManageServices/ManageServices';
 
 
 const Dashboard = () => {
@@ -25,6 +26,10 @@ const Dashboard = () => {
                     <Switch>
                         <Route path={`${path}/addService`}>
                             <AddService></AddService>
+                        </Route>
+
+                        <Route path={`${path}/manageServices`}>
+                            <ManageServices></ManageServices>
                         </Route>
                     </Switch>
                 </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './AddService.css';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddService = () => {
@@ -9,7 +11,31 @@ const AddService = () => {
     const [imageUrl, setImageUrl] = useState(null)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+
+
+    const onSubmit = data => {
+        data.imgUrl = imageUrl;
+
+        fetch('http://localhost:5000/addServices', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    notify();
+                    setImageUrl('')
+                }
+            })
+    };
+
+    const notify = () => {
+        toast.success("New service added successfully", {
+            autoClose: 2000
+        })
+    };
+
     const handleImgUpload = e => {
         const imageData = new FormData();
         imageData.set('key', '3f363e85e94ff32374398424e5766ed5')
@@ -21,9 +47,10 @@ const AddService = () => {
     }
     console.log(imageUrl);
     return (
-        <div className="container" onSubmit={handleSubmit(onSubmit)}>
+        <div className="container">
+            <ToastContainer />
             <div className="add-service-box">
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="row w-100 mt-5 p-5 add-service-form">
                         <div className="col-md-6">
 

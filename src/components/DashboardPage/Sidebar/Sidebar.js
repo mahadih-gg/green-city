@@ -22,7 +22,7 @@ const Sidebar = () => {
 
                 <h5><Link to={`${url}/makeAdmin`}><FontAwesomeIcon icon={faUserShield} className="me-2" />Make Admin</Link></h5>
 
-                <h5><Link to={`${url}/manage`}><FontAwesomeIcon icon={faThLarge} className="me-2" />Manage Services</Link></h5>
+                <h5><Link to={`${url}/manageServices`}><FontAwesomeIcon icon={faThLarge} className="me-2" />Manage Services</Link></h5>
 
                 <h5><Link to={`${url}/order`}><FontAwesomeIcon icon={faShoppingCart} className="me-2" />Order</Link></h5>
 
