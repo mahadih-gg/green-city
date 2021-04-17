@@ -1,0 +1,33 @@
+footer{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.263), rgba(0, 0, 0, 0.92)), url(../../../images/footerBg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.brand-logo img {
+    width: 200px;
+    height: auto;
+    padding: 5px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.146);
+}
+.social-ico{
+    font-size: 32px;
+    margin-right: 20px;
+    color: #ffff;
+    transition: all ease .3s;
+}
+.social-ico:hover{
+    color: #ffff;
+    transform: scale(1.20);
+    transition: all ease .3s;
+}
+footer h6{
+    line-height: 30px;
+    transition: all ease .2s;
+}
+footer h6:hover{
+    color: #2BDA73;
+    cursor: pointer;
+    transition: all ease .2s;
+}

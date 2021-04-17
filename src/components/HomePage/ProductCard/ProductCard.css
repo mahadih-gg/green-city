@@ -1,0 +1,9 @@
+.card-custom{
+    box-shadow: 5px 5px 10px #ededed;
+    transition: all ease .3s;
+}
+.card-custom:hover{
+    transform: scale(1.07);
+    transition: all ease .3s;
+    box-shadow: 5px 5px 20px #cccccc;
+}

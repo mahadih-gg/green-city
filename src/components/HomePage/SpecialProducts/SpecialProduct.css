@@ -1,0 +1,6 @@
+.special-product{
+    background: url(../../../images/productBg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

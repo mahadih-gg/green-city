@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Nova+Round&family=Ubuntu:wght@500&display=swap');
+
+.slider-custom{
+    background-size: cover;
+    height: 85vh;
+}
+.slider-img-1{
+    background: url(../../../images/slider1.png);
+    
+}
+.slider-img-2{
+    background: url(../../../images/slider2.png);
+    
+}
+.slider-custom h1{
+    line-height: 72px;
+    font-size: 60px;
+    color: #333333;
+    font-family: 'Concert One', cursive;
+}
+.slider-custom h4{
+    font-size: 25px;
+    color: #444444;
+}
+.slider-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}

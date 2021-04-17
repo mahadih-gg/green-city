@@ -1,0 +1,26 @@
+.service-text-box{
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    border: 5px solid #fff;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.300);
+}
+
+.service-box{
+    overflow: hidden;
+    border: none;
+    box-shadow: 5px 5px 10px #ddd;
+    border-radius: 2.5px;
+}
+.service-box img{
+    width: auto;
+    height: 350px;
+    transition: all ease .3s;
+    
+}
+.service-box:hover img{
+    filter: blur(1px);
+    transform: scale(1.1);
+    transition: all ease .3s;
+}

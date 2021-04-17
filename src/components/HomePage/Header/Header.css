@@ -1,0 +1,30 @@
+.btn-search{
+    border: none;
+    background: none;
+    transition: all ease .3s;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #1EAF67, #2BDA73);
+}
+.btn-search span{
+    color: #fff;
+    line-height: 40px;
+    display: inline-block;
+    font-size: 20px;
+}
+.btn-search:hover{
+    transform: rotate(-30deg);
+    transition: all ease .3s;
+}
+.btn-profile button{
+    border: none;
+    background: none;
+}
+.search-box{
+    margin-right: 170px;
+}
+.search-box, .profile-box{
+    z-index: 1;
+}

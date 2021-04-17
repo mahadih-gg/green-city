@@ -1,0 +1,29 @@
+.review-card{
+    border-radius: 10px;
+    border: none;
+    background: #FFF4D6;
+    position: relative;
+    box-shadow: 5px 5px 10px #ddd;
+    transition: all ease .5s;
+}
+.review-card:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px #ddd;
+    transition: all ease .5s;
+}
+.user-img-box{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+}
+.user-img-box img{
+    width: 100%;
+    border-radius: 30px 95px 188px 70px;
+
+}
+.rating{
+    background: #9f885d;
+    border-radius: 20px;
+    color: #FDDD70;
+    font-weight: bolder;
+}

@@ -1,0 +1,9 @@
+.news-latter{
+    height: 65vh;
+    background: url(../../../images/news-latter.png);
+    background-size: cover;
+    background-position: center;
+}
+.subscribe-form input{
+    letter-spacing: 6px;
+}
