@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import user from '../../../images/user.png';
 import logo from '../../../images/logo.png';
+import { UserContext } from '../../../App';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [searchBox, setSearchBox] = useState(false);
     const [profileBox, setProfileBox] = useState(false);
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,7 +29,7 @@ const Header = () => {
                                 <Link className="nav-link me-5" to="/">About</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link me-5" to="/">Orders</Link>
+                                <Link className="nav-link me-5" to="/dashboard/orderList">My Orders</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link me-5" to="/dashboard">Dashboard</Link>
@@ -35,20 +38,27 @@ const Header = () => {
                                 <Link className="nav-link me-5" to="/">Admin</Link>
                             </li>
                         </ul>
-                        <div className="">
+                        <div className="pe-5">
                             <button onClick={() => {
                                 setSearchBox(!searchBox)
                                 setProfileBox(false)
                             }} className="btn-search"><span><FontAwesomeIcon icon={faSearch} /></span></button>
-                            <Link to="/login"><button className="btn btn-link ps-3">Log In</button></Link>
-                        </div>
-                        <div className="btn-profile px-4">
-                            <button onClick={() => {
-                                setProfileBox(!profileBox)
-                                setSearchBox(false)
-                            }} >
-                                <img src={user} height="40px" alt="" />
-                            </button>
+
+                            {loggedInUser.email ?
+
+                                <div className="btn-profile ps-3">
+                                    <button onClick={() => {
+                                        setProfileBox(!profileBox)
+                                        setSearchBox(false)
+                                    }} >
+                                        <img src={loggedInUser.photoURL} height="40px" alt="" />
+                                    </button>
+                                </div>
+
+                                :
+                                <Link to="/login"><button className="btn btn-link ps-3">Log In</button></Link>
+                            }
+
                         </div>
                         <div>
                         </div>
@@ -68,7 +78,11 @@ const Header = () => {
                 profileBox &&
                 <div className="profile-box position-absolute end-0">
                     <div>
-                        <h4>mahadi.hasan.937524.mh@gmail.com</h4>
+                        <h4>{loggedInUser.email}</h4>
+                        <button className="btn btn-danger" onClick={() => {
+                            setLoggedInUser({})
+                            setProfileBox(false)
+                        }}>Log Out</button>
                     </div>
                 </div>
             }

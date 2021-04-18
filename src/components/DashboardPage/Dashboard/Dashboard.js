@@ -14,6 +14,7 @@ import ManageOrders from '../ManageOrders/ManageOrders';
 import OrderList from '../OrderList/OrderList';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddReview from '../AddReview/AddReview';
+import DashboardMain from '../DashboardMain/DashboardMain';
 
 
 const Dashboard = () => {
@@ -29,6 +30,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-9">
                     <Switch>
+
                         <Route path={`${path}/addService`}>
                             <AddService></AddService>
                         </Route>

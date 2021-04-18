@@ -11,6 +11,7 @@ import Home from './components/HomePage/Home/Home';
 import Login from './components/LoginPage/Login/Login';
 import { createContext, useState } from 'react';
 import Dashboard from './components/DashboardPage/Dashboard/Dashboard';
+import PrivateRoute from './components/LoginPage/PrivateRoute/PrivateRoute';
 
 
 export const UserContext = createContext()
@@ -27,7 +28,6 @@ function App() {
         <Header></Header>
 
         <Switch>
-
           <Route exact path='/'>
             <Home></Home>
           </Route>
@@ -36,13 +36,13 @@ function App() {
             <Login></Login>
           </Route>
 
-          <Route path='/dashboard'>
+          <PrivateRoute path='/dashboard'>
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/dashboard/order/:serviceId'>
+          <PrivateRoute path='/dashboard/order/:serviceId'>
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
 
         </Switch>
       </Router>
