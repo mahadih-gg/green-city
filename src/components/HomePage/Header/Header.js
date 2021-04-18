@@ -54,7 +54,7 @@ const Header = () => {
                                 </button>
 
                                 :
-                                <Link to="/login"><button className="btn btn-link ps-3">Log In</button></Link>
+                                <Link to="/login"><button className="btn btn-custom ms-5">Log In</button></Link>
                             }
 
                         </div>

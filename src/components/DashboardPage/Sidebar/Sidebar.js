@@ -43,21 +43,17 @@ const Sidebar = () => {
                         <h5><Link to={`${url}/makeAdmin`}><FontAwesomeIcon icon={faUserShield} className="me-2" />Make Admin</Link></h5>
                     </div>
                 }
+                <div>
+                    <h5><Link to={`${url}/order`}><FontAwesomeIcon icon={faShoppingCart} className="me-2" />Order</Link></h5>
 
-                {isAdmin === false &&
-                    <div>
-                        <h5><Link to={`${url}/order`}><FontAwesomeIcon icon={faShoppingCart} className="me-2" />Order</Link></h5>
+                    <h5><Link to={`${url}/orderList`}><FontAwesomeIcon icon={faClipboardList} className="me-2" />Order list</Link></h5>
 
-                        <h5><Link to={`${url}/orderList`}><FontAwesomeIcon icon={faClipboardList} className="me-2" />Order list</Link></h5>
+                    <h5><Link to={`${url}/addReview`}><FontAwesomeIcon icon={faCommentDots} className="me-2" />Review</Link></h5>
 
-                        <h5><Link to={`${url}/addReview`}><FontAwesomeIcon icon={faCommentDots} className="me-2" />Review</Link></h5>
-
-                        <h4 className="mt-5">
-                            <Link to=""><FontAwesomeIcon icon={faSignOutAlt} className="me-2" />Log Out</Link>
-                        </h4>
-                    </div>
-                }
-
+                    <h4 className="mt-5">
+                        <Link to="" onClick={setLoggedInUser({})}><FontAwesomeIcon icon={faSignOutAlt} className="me-2" />Log Out</Link>
+                    </h4>
+                </div>
             </div>
         </div>
     );
