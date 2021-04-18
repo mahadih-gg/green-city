@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Order.css';
 import { useForm } from "react-hook-form";
 import { Elements, CardElement } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useParams } from 'react-router';
+import { UserContext } from '../../../App';
+import ServiceOrderCard from './ServiceOrderCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const stripePromise = loadStripe('pk_test_51IeKPeIyo5mTdZ9OKPxzqloAN7kU2pjFpSOpz7BThrakveUDV6ImLCpdQQhAXNWrmhra3wZzj6ta2EGAUVHVZObs00wDkVi79i');
@@ -11,12 +15,11 @@ const stripePromise = loadStripe('pk_test_51IeKPeIyo5mTdZ9OKPxzqloAN7kU2pjFpSOpz
 
 const Order = () => {
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const { serviceId } = useParams();
-    console.log('serviceId', serviceId);
 
     const [service, setService] = useState([]);
-    const { _id, imgUrl, title, price, description } = service;
-    console.log(service);
 
     //Read services data
     useEffect(() => {
@@ -28,29 +31,43 @@ const Order = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
+
+        data.email = loggedInUser.email;
+        data.userName = loggedInUser.displayName;
+        data.userProfile = loggedInUser.photoURL;
+        data.serviceData = service
+
         console.log(data)
 
+        fetch('http://localhost:5000/addServiceOrder', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    notify();
+                }
+            })
+
     };
+    const notify = () => {
+        toast.success("New service added successfully", {
+            autoClose: 2000
+        })
+    };
+
 
     return (
         <section className="container">
+            <ToastContainer />
             <div className="order-box row">
                 <h1>Confirm Order</h1>
                 <hr />
 
                 <div className="order-card col-md-3">
-                    <div className="card text-white order-card-box">
-                        <img src={imgUrl} className="order-card-img" alt="..." />
-                        <div className="card-img-overlay d-flex justify-content-center align-items-center order-text-box my-auto m-auto">
-                            <div>
-                                <h3 className="card-title">{title}</h3>
-                                <p>
-                                    {description}
-                                </p>
-                                <h4 className="order-service-price py-2 px-3 w-50 text-center">${price}</h4>
-                            </div>
-                        </div>
-                    </div>
+                    <ServiceOrderCard service={service} key={service._id}></ServiceOrderCard>
                 </div>
 
                 <div className="order-form col-md-8">
@@ -75,7 +92,7 @@ const Order = () => {
                             </div>
 
                             <div className="mb-3 col-md-12">
-                                <input type="email" className="form-control" {...register("email", { required: true })} placeholder="E-mail" />
+                                <input type="email" className="form-control" {...register("email", { required: true })} placeholder="E-mail" value={loggedInUser.email} />
                                 {errors.address && <span>This field is required</span>}
                             </div>
 

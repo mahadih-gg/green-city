@@ -11,7 +11,7 @@ import AddService from '../AddService/AddService';
 import ManageServices from '../ManageServices/ManageServices';
 import Order from '../Order/Order';
 import ManageOrders from '../ManageOrders/ManageOrders';
-import OrderList from '../../OrderList/OrderList';
+import OrderList from '../OrderList/OrderList';
 
 
 const Dashboard = () => {
@@ -44,6 +44,10 @@ const Dashboard = () => {
                         </Route>
 
                         <Route path={`${path}/orderList`}>
+                            <OrderList></OrderList>
+                        </Route>
+
+                        <Route path={`${path}/addAdmin`}>
                             <OrderList></OrderList>
                         </Route>
 
