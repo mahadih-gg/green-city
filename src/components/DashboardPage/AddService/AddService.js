@@ -72,7 +72,7 @@ const AddService = () => {
                             <div className="mb-3 w-50">
                                 <label htmlFor="price" className="form-label">Service Price</label>
                                 <input type="number" className="form-control" {...register("price", { required: true })} name="price" id="price" placeholder="Add service price" />
-                                {errors.title && <span>This field is required</span>}
+                                {errors.price && <span>This field is required</span>}
                             </div>
 
                             <div className="mb-3">
