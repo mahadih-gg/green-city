@@ -12,6 +12,8 @@ import ManageServices from '../ManageServices/ManageServices';
 import Order from '../Order/Order';
 import ManageOrders from '../ManageOrders/ManageOrders';
 import OrderList from '../OrderList/OrderList';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddReview from '../AddReview/AddReview';
 
 
 const Dashboard = () => {
@@ -47,8 +49,12 @@ const Dashboard = () => {
                             <OrderList></OrderList>
                         </Route>
 
-                        <Route path={`${path}/addAdmin`}>
-                            <OrderList></OrderList>
+                        <Route path={`${path}/makeAdmin`}>
+                            <MakeAdmin></MakeAdmin>
+                        </Route>
+
+                        <Route path={`${path}/addReview`}>
+                            <AddReview></AddReview>
                         </Route>
 
                     </Switch>

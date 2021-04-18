@@ -12,7 +12,7 @@ const ReviewDetails = ({ review }) => {
                     <img src={profileImg} alt="" />
                 </div>
                 <div className="pt-4 pe-4 user-details ms-auto">
-                    <h4>{name}</h4>
+                    <h3>{name}</h3>
                     <p>{identity}</p>
                     <h5 className="rating py-1 text-center">{rating} <FontAwesomeIcon icon={faStar} /> </h5>
                 </div>

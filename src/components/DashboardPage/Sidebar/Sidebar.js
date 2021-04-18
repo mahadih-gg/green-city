@@ -28,7 +28,7 @@ const Sidebar = () => {
 
                 <h5><Link to={`${url}/orderList`}><FontAwesomeIcon icon={faClipboardList} className="me-2" />Order list</Link></h5>
 
-                <h5><Link to={`${url}/review`}><FontAwesomeIcon icon={faCommentDots} className="me-2" />Review</Link></h5>
+                <h5><Link to={`${url}/addReview`}><FontAwesomeIcon icon={faCommentDots} className="me-2" />Review</Link></h5>
 
                 <h4 className="mt-5">
                     <Link to=""><FontAwesomeIcon icon={faSignOutAlt} className="me-2" />Log Out</Link>
