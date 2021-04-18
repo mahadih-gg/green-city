@@ -9,6 +9,9 @@ import {
 import Sidebar from '../Sidebar/Sidebar';
 import AddService from '../AddService/AddService';
 import ManageServices from '../ManageServices/ManageServices';
+import Order from '../Order/Order';
+import ManageOrders from '../ManageOrders/ManageOrders';
+import OrderList from '../../OrderList/OrderList';
 
 
 const Dashboard = () => {
@@ -31,6 +34,19 @@ const Dashboard = () => {
                         <Route path={`${path}/manageServices`}>
                             <ManageServices></ManageServices>
                         </Route>
+
+                        <Route exact path={`${path}/order/:serviceId`}>
+                            <Order></Order>
+                        </Route>
+
+                        <Route path={`${path}/manageOrders`}>
+                            <ManageOrders></ManageOrders>
+                        </Route>
+
+                        <Route path={`${path}/orderList`}>
+                            <OrderList></OrderList>
+                        </Route>
+
                     </Switch>
                 </div>
             </div>

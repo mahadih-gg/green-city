@@ -54,28 +54,35 @@ const AddService = () => {
                     <div className="row w-100 mt-5 p-5 add-service-form">
                         <div className="col-md-6">
 
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Service Title</label>
-                                <input type="text" class="form-control" {...register("title", { required: true })} name="title" id="title" placeholder="Enter service title" />
+                            <div className="mb-3">
+                                <label htmlFor="title" className="form-label">Service Title</label>
+                                <input type="text" className="form-control" {...register("title", { required: true })} name="title" id="title" placeholder="Enter service title" />
                                 {errors.title && <span>This field is required</span>}
                             </div>
 
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" name="description" {...register("description", { required: true })} id="description" cols="30" rows="5" placeholder="Write service description here"></textarea>
+                            <div className="mb-3">
+                                <label htmlFor="description" className="form-label">Description</label>
+                                <textarea className="form-control" name="description" {...register("description", { required: true })} id="description" cols="30" rows="5" placeholder="Write service description here"></textarea>
                                 {errors.description && <span>This field is required</span>}
                             </div>
 
                         </div>
                         <div className="col-md-6">
-                            <div class="mb-3">
-                                <label for="serviceImg" class="form-label">Upload Image</label>
-                                <input type="file" onChange={handleImgUpload} id="serviceImg" />
+
+                            <div className="mb-3 w-50">
+                                <label htmlFor="price" className="form-label">Service Price</label>
+                                <input type="number" className="form-control" {...register("price", { required: true })} name="price" id="price" placeholder="Add service price" />
+                                {errors.title && <span>This field is required</span>}
+                            </div>
+
+                            <div className="mb-3">
+                                <label htmlFor="serviceImg" className="form-label">Upload Image</label>
+                                <input type="file" onChange={handleImgUpload} id="serviceImg" required />
                             </div>
 
                         </div>
                         <div className="w-100 d-flex justify-content-end px-5">
-                            <button type="submit" class="btn btn-custom w-25">Submit</button>
+                            <button type="submit" className="btn btn-custom w-25">Submit</button>
                         </div>
 
                     </div>

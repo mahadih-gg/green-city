@@ -40,6 +40,10 @@ function App() {
             <Dashboard></Dashboard>
           </Route>
 
+          <Route path='/dashboard/order/:serviceId'>
+            <Dashboard></Dashboard>
+          </Route>
+
         </Switch>
       </Router>
     </UserContext.Provider>

@@ -3,7 +3,7 @@
     text-align: center;
     border: 5px solid #fff;
     color: #fff;
-    background: rgba(0, 0, 0, 0.300);
+    background: rgba(0, 0, 0, 0.400);
 }
 .service-text-box p{
     color: #d5d5d5;
@@ -26,4 +26,8 @@
     filter: blur(1px);
     transform: scale(1.1);
     transition: all ease .3s;
+}
+.service-price{
+    background: rgba(0, 0, 0, 0.600);
+    border-radius: 20px;
 }

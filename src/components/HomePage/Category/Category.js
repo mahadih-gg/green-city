@@ -27,7 +27,7 @@ const categories = [
 
 const Category = () => {
     return (
-        <div className="row mb-5">
+        <div className="row w-100 mb-5">
             {
                 categories.map(category => <CategotyDetails category={category}></CategotyDetails>)
             }

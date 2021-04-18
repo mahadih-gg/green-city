@@ -1,0 +1,14 @@
+.order-card-box{
+    border: none;
+}
+.order-card-box img{
+    filter: blur(2px);
+}
+.order-text-box{
+    background: rgba(0, 0, 0, 0.66);
+}
+.order-service-price{
+    background: rgba(33, 203, 110, 0.616);
+    border-radius: 30px;
+    font-size: 22px;
+}

@@ -6,8 +6,11 @@
 .btn-delete{
     border: none;
     background: none;
-    color: #f50000;
+    color: #dc3545;
     font-size: 25px;
+}
+.btn-delete:hover{
+    color: #BB2D3B;
 }
 .btn-delete:active{
     transform: scale(.80)
