@@ -51,7 +51,7 @@ const Sidebar = () => {
                     <h5><Link to={`${url}/addReview`}><FontAwesomeIcon icon={faCommentDots} className="me-2" />Review</Link></h5>
 
                     <h4 className="mt-5">
-                        <Link to="" onClick={setLoggedInUser({})}><FontAwesomeIcon icon={faSignOutAlt} className="me-2" />Log Out</Link>
+                        <Link to=""><FontAwesomeIcon icon={faSignOutAlt} className="me-2" />Log Out</Link>
                     </h4>
                 </div>
             </div>
