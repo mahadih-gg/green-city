@@ -18,7 +18,7 @@
     transform: rotate(-30deg);
     transition: all ease .3s;
 }
-.btn-profile button{
+.btn-profile{
     border: none;
     background: none;
 }

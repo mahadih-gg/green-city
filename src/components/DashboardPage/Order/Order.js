@@ -25,7 +25,7 @@ const Order = () => {
 
     //Read services data
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${serviceId}`)
+        fetch(`https://dry-peak-12747.herokuapp.com/service/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
@@ -42,7 +42,7 @@ const Order = () => {
 
         console.log(data)
 
-        fetch('http://localhost:5000/addServiceOrder', {
+        fetch('https://dry-peak-12747.herokuapp.com/addServiceOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

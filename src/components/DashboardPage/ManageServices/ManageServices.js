@@ -11,7 +11,7 @@ const ManageServices = () => {
 
     //Read services data
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://dry-peak-12747.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [services])
@@ -19,7 +19,7 @@ const ManageServices = () => {
     //Delete services data
     const handleServiceDelete = id => {
 
-        fetch(`http://localhost:5000/deleteService/${id}`, {
+        fetch(`https://dry-peak-12747.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

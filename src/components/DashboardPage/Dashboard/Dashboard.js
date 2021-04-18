@@ -31,6 +31,10 @@ const Dashboard = () => {
                 <div className="col-md-9">
                     <Switch>
 
+                        <Route exact path="/dashboard">
+                            <DashboardMain></DashboardMain>
+                        </Route>
+
                         <Route path={`${path}/addService`}>
                             <AddService></AddService>
                         </Route>

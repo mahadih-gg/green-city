@@ -46,14 +46,12 @@ const Header = () => {
 
                             {loggedInUser.email ?
 
-                                <div className="btn-profile ps-3">
-                                    <button onClick={() => {
-                                        setProfileBox(!profileBox)
-                                        setSearchBox(false)
-                                    }} >
-                                        <img src={loggedInUser.photoURL} height="40px" alt="" />
-                                    </button>
-                                </div>
+                                <button className="btn-profile ps-3" onClick={() => {
+                                    setProfileBox(!profileBox)
+                                    setSearchBox(false)
+                                }} >
+                                    <img src={loggedInUser.photoURL} height="40px" alt="" />
+                                </button>
 
                                 :
                                 <Link to="/login"><button className="btn btn-link ps-3">Log In</button></Link>

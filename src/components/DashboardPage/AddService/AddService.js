@@ -16,7 +16,7 @@ const AddService = () => {
     const onSubmit = data => {
         data.imgUrl = imageUrl;
 
-        fetch('http://localhost:5000/addServices', {
+        fetch('https://dry-peak-12747.herokuapp.com/addServices', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

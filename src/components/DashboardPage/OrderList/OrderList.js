@@ -13,7 +13,7 @@ const OrderList = () => {
 
     //Read services data
     useEffect(() => {
-        fetch(`http://localhost:5000/serviceOrder?email=${loggedInUser.email}`)
+        fetch(`https://dry-peak-12747.herokuapp.com/serviceOrder?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => setServiceOrder(data))
     }, [])

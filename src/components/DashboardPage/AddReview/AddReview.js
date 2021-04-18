@@ -20,7 +20,7 @@ const AddReview = () => {
         data.userProfile = loggedInUser.photoURL;
         console.log('data', data);
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://dry-peak-12747.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
